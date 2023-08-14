@@ -59,7 +59,13 @@ public class PlayerController {
 	public Country findCountryWithHighestRatio() {
 		return playerService.findCountryWithHighestRatio();
 	}
+
 	
+	@GetMapping(value = "/players/pipeline")
+	public String test() {
+		return "test pipeline";
+	}
+
 	/**
 	 * Get the Team with the given key.
 	 *
