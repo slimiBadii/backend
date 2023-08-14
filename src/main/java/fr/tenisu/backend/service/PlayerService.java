@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import fr.tenisu.backend.domain.Country;
 import fr.tenisu.backend.domain.Player;
+import fr.tenisu.backend.model.SatisticalDto;
 
 public interface PlayerService {
 
@@ -18,9 +19,11 @@ public interface PlayerService {
 
 	void save(List<Player> players);
 
-	Double calculateMedianHeight();
+	Double calculateAverageHeight();
 
-	Double calculateAverageBMI();
+	Double calculateAverageIMC();
 	
-	Country findCountryWithHighestRatio();
+	String findCountryWithHighestRatio();
+	
+	SatisticalDto  getSatistical();
 }

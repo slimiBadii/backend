@@ -16,6 +16,6 @@ public interface PlayerRepository extends JpaRepository<Player, Long> {
 
 	List<Player> findAllByOrderByDataPointsDesc();
 
-	@Query("SELECT p.country FROM Player p WHERE (SUM(unnest(p.data.last)) * 1.0) / SIZE(p.data.last) = (SELECT MAX((SUM(pp.data.last) * 1.0) / SIZE(pp.data.last)) FROM Player pp)")
-	Country findCountryWithHighestRatio();
+	@Query("SELECT p.country.code FROM Player p WHERE (SUM(unnest(p.data.last)) * 1.0) / SIZE(p.data.last) = (SELECT MAX((SUM(pp.data.last) * 1.0) / SIZE(pp.data.last)) FROM Player pp)")
+	String findCountryWithHighestRatio();
 }

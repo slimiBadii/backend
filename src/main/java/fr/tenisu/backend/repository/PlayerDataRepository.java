@@ -10,9 +10,9 @@ import fr.tenisu.backend.domain.PlayerData;
 public interface PlayerDataRepository extends JpaRepository<PlayerData, Long>{
 
 	 @Query("SELECT AVG(p.height) FROM PlayerData p")
-	 Double calculateMedianHeight();
+	 Double calculateAverageHeight();
 	 
 	 @Query("SELECT AVG((p.weight/1000) / (p.height / 100.0 * p.height / 100.0)) FROM PlayerData p")
-	 Double calculateAverageBMI();
+	 Double calculateAverageIMC();
 	 
 }
